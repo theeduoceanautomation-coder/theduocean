@@ -302,7 +302,7 @@ function LandingPage() {
           <div className="grid gap-10 lg:grid-cols-3">
             <div>
               <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
-                Get Your Personalized Certification & AI Career Roadmap
+                Get Your Personalized Certification & Career Roadmap
               </h2>
               <p className="mt-4 text-sm text-muted-foreground">
                 Before committing to any certification, training program, or career transition, you deserve complete clarity.
