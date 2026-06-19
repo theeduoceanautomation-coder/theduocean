@@ -270,13 +270,13 @@ function LandingPage() {
           </div>
 
           <div className="relative">
-            <div className="relative overflow-hidden rounded-2xl">
+            <div className="relative overflow-hidden rounded-2xl aspect-[4/3] lg:aspect-auto lg:h-[520px]">
               <img
                 src={heroImg}
                 alt="Professional considering certification options"
                 width={1280}
                 height={1024}
-                className="h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full object-cover object-center"
               />
             </div>
             <div className="absolute -right-2 bottom-6 hidden w-72 rounded-xl bg-card p-5 shadow-card lg:block">
@@ -523,8 +523,8 @@ function LandingPage() {
                   ))}
                 </ul>
               </div>
-              <div className="relative min-h-[260px] bg-soft">
-                <img src={stressedImg} alt="Frustrated professional" loading="lazy" width={1024} height={1024} className="h-full w-full object-cover grayscale" />
+              <div className="relative min-h-[280px] sm:min-h-[340px] bg-soft">
+                <img src={stressedImg} alt="Frustrated professional" loading="lazy" width={1024} height={1024} className="absolute inset-0 h-full w-full object-cover object-top grayscale" />
               </div>
             </div>
           </div>
@@ -551,8 +551,8 @@ function LandingPage() {
                   BOOK YOUR FREE ROADMAP SESSION
                 </button>
               </div>
-              <div className="relative min-h-[260px] bg-orange/10">
-                <img src={confidentImg} alt="Confident professional" loading="lazy" width={1024} height={1024} className="h-full w-full object-cover" />
+              <div className="relative min-h-[280px] sm:min-h-[340px] bg-orange/10">
+                <img src={confidentImg} alt="Confident professional" loading="lazy" width={1024} height={1024} className="absolute inset-0 h-full w-full object-cover object-center" />
               </div>
             </div>
           </div>
