@@ -182,16 +182,23 @@ const aiTracks = [
   { icon: Rocket, title: "AI + DevOps", desc: "DevOps engineers using AI to accelerate delivery and observability." },
 ];
 
+function openVoiceflowChat() {
+  if (typeof window !== "undefined" && (window as any).voiceflow?.chat) {
+    (window as any).voiceflow.chat.open();
+  }
+}
+
 function CTAButton({ children, large = false }: { children: React.ReactNode; large?: boolean }) {
   return (
-    <a
-      href="#book"
+    <button
+      type="button"
+      onClick={openVoiceflowChat}
       className={`inline-flex items-center justify-center rounded-md bg-orange-grad font-semibold text-orange-foreground shadow-glow-orange transition-transform hover:scale-[1.02] ${
         large ? "px-8 py-4 text-base" : "px-6 py-3 text-sm"
       }`}
     >
       {children}
-    </a>
+    </button>
   );
 }
 
@@ -222,12 +229,13 @@ function LandingPage() {
             <a href="#testimonials" className="hover:text-foreground">Testimonials</a>
             <a href="#faq" className="hover:text-foreground">FAQ</a>
           </nav>
-          <a
-            href="#book"
+          <button
+            type="button"
+            onClick={openVoiceflowChat}
             className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90"
           >
             Book Free Session
-          </a>
+          </button>
         </div>
       </header>
 
@@ -396,9 +404,9 @@ function LandingPage() {
                   ))}
                 </ul>
                 <div className="mt-7">
-                  <a href="#book" className="inline-flex rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
+                  <button type="button" onClick={openVoiceflowChat} className="inline-flex rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
                     BOOK YOUR FREE ROADMAP SESSION
-                  </a>
+                  </button>
                 </div>
               </div>
 
@@ -540,9 +548,9 @@ function LandingPage() {
                     </li>
                   ))}
                 </ul>
-                <a href="#book" className="mt-5 inline-flex rounded-md bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground hover:bg-primary/90">
+                <button type="button" onClick={openVoiceflowChat} className="mt-5 inline-flex rounded-md bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground hover:bg-primary/90">
                   BOOK YOUR FREE ROADMAP SESSION
-                </a>
+                </button>
               </div>
               <div className="relative min-h-[260px] bg-orange/10">
                 <img src={confidentImg} alt="Confident professional" loading="lazy" width={1024} height={1024} className="h-full w-full object-cover" />
@@ -617,9 +625,9 @@ function LandingPage() {
                   </div>
                 ))}
               </div>
-              <a href="#book" className="mt-6 inline-flex rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
+              <button type="button" onClick={openVoiceflowChat} className="mt-6 inline-flex rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
                 BOOK YOUR FREE ROADMAP SESSION
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -692,9 +700,9 @@ function LandingPage() {
                 <p className="mt-4 text-sm text-white/75">
                   If that sounds like you, this session was built for you.
                 </p>
-                <a href="#book" className="mt-6 inline-flex rounded-md bg-orange-grad px-6 py-3 text-sm font-semibold text-orange-foreground shadow-glow-orange">
+                <button type="button" onClick={openVoiceflowChat} className="mt-6 inline-flex rounded-md bg-orange-grad px-6 py-3 text-sm font-semibold text-orange-foreground shadow-glow-orange">
                   BOOK MY FREE ROADMAP SESSION
-                </a>
+                </button>
               </div>
               <ul className="grid gap-3 sm:grid-cols-2">
                 {audience.map((a) => (

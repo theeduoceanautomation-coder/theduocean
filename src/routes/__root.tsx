@@ -122,6 +122,15 @@ function RootShell({ children }: { children: ReactNode }) {
       url: "https://general-runtime.voiceflow.com",
       voice: { url: "https://runtime-api.voiceflow.com" }
     });
+    var poll = setInterval(function() {
+      var host = d.getElementById("voiceflow-chat");
+      if (host && host.shadowRoot) {
+        clearInterval(poll);
+        var style = d.createElement("style");
+        style.textContent = ".vfrc-launcher { width: 140px !important; height: 56px !important; padding: 10px 18px !important; } .vfrc-launcher--media { width: 36px !important; height: 36px !important; } .vfrc-launcher--media img, .vfrc-launcher--media svg { width: 30px !important; height: 30px !important; } .vfrc-launcher__label { font-size: 15px !important; }";
+        host.shadowRoot.appendChild(style);
+      }
+    }, 300);
   };
   v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
   v.type = "text/javascript";
