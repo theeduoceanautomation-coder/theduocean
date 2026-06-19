@@ -33,9 +33,9 @@ import {
   Flag,
 } from "lucide-react";
 import eduoceanLogo from "@/assets/eduocean-logo.png";
-import heroImg from "@/assets/hero-professional.jpg";
-import stressedImg from "@/assets/stressed-professional.jpg";
-import confidentImg from "@/assets/confident-professional.jpg";
+import heroImg from "@/assets/hero-professional.png";
+import stressedImg from "@/assets/stressed-professional.png";
+import confidentImg from "@/assets/confident-professional.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
