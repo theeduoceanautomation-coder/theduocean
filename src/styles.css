@@ -127,3 +127,26 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+/* Voiceflow chat launcher — bigger button */
+.vfrc-launcher {
+  width: 72px !important;
+  height: 72px !important;
+  min-width: 72px !important;
+  min-height: 72px !important;
+}
+
+.vfrc-launcher--media {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.vfrc-launcher--media img,
+.vfrc-launcher--media svg {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.vfrc-launcher__label {
+  font-size: 14px !important;
+}
