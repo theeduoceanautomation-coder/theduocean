@@ -320,7 +320,7 @@ function LandingPage() {
             <div className="rounded-2xl bg-card shadow-card">
               <div className="flex items-center gap-3 rounded-t-2xl bg-primary p-4 text-primary-foreground">
                 <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/20">
-                  <Sparkles className="h-5 w-5" />
+                  <img src={eduoceanLogo} alt="EduOcean Logo" className="h-6 w-6 object-contain" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold">EduOcean Career Advisor</p>
