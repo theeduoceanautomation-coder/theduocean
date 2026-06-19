@@ -509,51 +509,47 @@ function LandingPage() {
       <section className="py-20">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2">
           <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-soft">
-            <div className="grid sm:grid-cols-2">
-              <div className="p-7">
-                <SectionTag>Why most certification journeys fail</SectionTag>
-                <h3 className="mt-3 text-2xl font-bold">The Exam Is Rarely The Hardest Part.</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Everything before the exam is.</p>
-                <p className="mt-5 text-sm font-semibold text-navy">Most professionals struggle because they:</p>
-                <ul className="mt-3 space-y-2">
-                  {examStruggles.map((e) => (
-                    <li key={e} className="flex gap-2 text-sm text-foreground/80">
-                      <AlertTriangle className="mt-0.5 h-4 w-4 flex-shrink-0 text-orange" /> {e}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="relative min-h-[280px] sm:min-h-[340px] bg-soft">
-                <img src={stressedImg} alt="Frustrated professional" loading="lazy" width={1024} height={1024} className="absolute inset-0 h-full w-full object-cover object-top grayscale" />
-              </div>
+            <div className="relative h-52 w-full overflow-hidden bg-soft">
+              <img src={stressedImg} alt="Frustrated professional" loading="lazy" width={1024} height={768} className="h-full w-full object-cover object-[center_30%] grayscale" />
+            </div>
+            <div className="p-7">
+              <SectionTag>Why most certification journeys fail</SectionTag>
+              <h3 className="mt-3 text-2xl font-bold">The Exam Is Rarely The Hardest Part.</h3>
+              <p className="mt-2 text-sm text-muted-foreground">Everything before the exam is.</p>
+              <p className="mt-5 text-sm font-semibold text-navy">Most professionals struggle because they:</p>
+              <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2">
+                {examStruggles.map((e) => (
+                  <li key={e} className="flex gap-2 text-sm text-foreground/80">
+                    <AlertTriangle className="mt-0.5 h-4 w-4 flex-shrink-0 text-orange" /> {e}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
           <div id="book" className="overflow-hidden rounded-2xl border border-border bg-card shadow-soft">
-            <div className="grid sm:grid-cols-2">
-              <div className="p-7">
-                <SectionTag>Introducing the EduOcean</SectionTag>
-                <h3 className="mt-1 text-2xl font-bold">Career Roadmap Session</h3>
-                <p className="mt-3 text-sm font-semibold text-navy">
-                  One Conversation Can Save You Months Of Confusion
-                </p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  During your roadmap session, we'll help you understand:
-                </p>
-                <ul className="mt-4 space-y-2">
-                  {sessionPoints.map((s) => (
-                    <li key={s} className="flex gap-2 text-sm text-foreground/80">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" /> {s}
-                    </li>
-                  ))}
-                </ul>
-                <button type="button" onClick={openVoiceflowChat} className="mt-5 inline-flex rounded-md bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground hover:bg-primary/90">
-                  BOOK YOUR FREE ROADMAP SESSION
-                </button>
-              </div>
-              <div className="relative min-h-[280px] sm:min-h-[340px] bg-orange/10">
-                <img src={confidentImg} alt="Confident professional" loading="lazy" width={1024} height={1024} className="absolute inset-0 h-full w-full object-cover object-center" />
-              </div>
+            <div className="relative h-52 w-full overflow-hidden bg-orange/10">
+              <img src={confidentImg} alt="Confident professional" loading="lazy" width={1024} height={768} className="h-full w-full object-cover object-[center_25%]" />
+            </div>
+            <div className="p-7">
+              <SectionTag>Introducing the EduOcean</SectionTag>
+              <h3 className="mt-1 text-2xl font-bold">Career Roadmap Session</h3>
+              <p className="mt-3 text-sm font-semibold text-navy">
+                One Conversation Can Save You Months Of Confusion
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                During your roadmap session, we'll help you understand:
+              </p>
+              <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2">
+                {sessionPoints.map((s) => (
+                  <li key={s} className="flex gap-2 text-sm text-foreground/80">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" /> {s}
+                  </li>
+                ))}
+              </ul>
+              <button type="button" onClick={openVoiceflowChat} className="mt-5 inline-flex rounded-md bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground hover:bg-primary/90">
+                BOOK YOUR FREE ROADMAP SESSION
+              </button>
             </div>
           </div>
         </div>
