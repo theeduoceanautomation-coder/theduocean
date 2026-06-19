@@ -800,9 +800,7 @@ function LandingPage() {
       <footer className="border-t border-border bg-background py-12">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6">
           <div className="flex items-center justify-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-grad">
-              <Sparkles className="h-4 w-4 text-orange-foreground" />
-            </div>
+            <img src={eduoceanLogo} alt="EduOcean Logo" className="h-8 w-8 object-contain" />
             <span className="font-display text-lg font-bold">
               The Edu<span className="text-primary">Ocean</span>
             </span>
