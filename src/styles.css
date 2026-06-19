@@ -51,7 +51,7 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.03 260);
 
-  --primary: oklch(0.5 0.2 258);              /* royal blue */
+  --primary: oklch(0.48 0.23 265);              /* EduOcean blue — matches logo waves */
   --primary-foreground: oklch(0.99 0 0);
 
   --secondary: oklch(0.96 0.01 250);
@@ -60,29 +60,29 @@
   --muted: oklch(0.96 0.01 250);
   --muted-foreground: oklch(0.5 0.02 255);
 
-  --accent: oklch(0.72 0.18 50);
-  --accent-foreground: oklch(0.99 0 0);
+  --accent: oklch(0.82 0.19 87);
+  --accent-foreground: oklch(0.15 0.02 80);
 
   --destructive: oklch(0.62 0.22 25);
   --destructive-foreground: oklch(0.99 0 0);
 
-  --border: oklch(0.92 0.01 250);
-  --input: oklch(0.92 0.01 250);
-  --ring: oklch(0.5 0.2 258);
+  --border: oklch(0.91 0.015 255);
+  --input: oklch(0.91 0.015 255);
+  --ring: oklch(0.48 0.23 265);
 
-  --navy: oklch(0.22 0.08 260);
+  --navy: oklch(0.22 0.09 265);
   --navy-foreground: oklch(0.99 0 0);
-  --orange: oklch(0.72 0.18 50);
-  --orange-foreground: oklch(0.99 0 0);
-  --soft: oklch(0.975 0.012 250);
+  --orange: oklch(0.82 0.19 87);              /* EduOcean gold — matches logo sun */
+  --orange-foreground: oklch(0.15 0.02 80);
+  --soft: oklch(0.975 0.01 255);
 
-  --gradient-hero: linear-gradient(180deg, oklch(0.985 0.01 250) 0%, oklch(0.96 0.02 250) 100%);
-  --gradient-orange: linear-gradient(135deg, oklch(0.74 0.18 55), oklch(0.68 0.2 40));
-  --gradient-navy: linear-gradient(135deg, oklch(0.22 0.08 260), oklch(0.28 0.1 262));
+  --gradient-hero: linear-gradient(180deg, oklch(0.985 0.008 255) 0%, oklch(0.96 0.018 260) 100%);
+  --gradient-orange: linear-gradient(135deg, oklch(0.85 0.19 90), oklch(0.78 0.21 80));
+  --gradient-navy: linear-gradient(135deg, oklch(0.22 0.09 265), oklch(0.3 0.12 265));
 
-  --shadow-soft: 0 4px 24px -8px oklch(0.3 0.1 260 / 0.12);
-  --shadow-card: 0 10px 40px -12px oklch(0.3 0.1 260 / 0.15);
-  --shadow-glow-orange: 0 10px 30px -10px oklch(0.72 0.18 50 / 0.5);
+  --shadow-soft: 0 4px 24px -8px oklch(0.3 0.12 265 / 0.12);
+  --shadow-card: 0 10px 40px -12px oklch(0.3 0.12 265 / 0.15);
+  --shadow-glow-orange: 0 10px 30px -10px oklch(0.82 0.19 87 / 0.5);
 }
 
 @layer base {
