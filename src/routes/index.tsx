@@ -32,6 +32,7 @@ import {
   X,
   Flag,
 } from "lucide-react";
+import eduoceanLogo from "@/assets/eduocean-logo.png";
 import heroImg from "@/assets/hero-professional.jpg";
 import stressedImg from "@/assets/stressed-professional.jpg";
 import confidentImg from "@/assets/confident-professional.jpg";
@@ -40,7 +41,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "EduOcean — Personalized Certification & Career Roadmap" },
-      { name: "description", content: "Get a personalized certification & AI career roadmap before you invest time, money, or effort into the wrong path. Free 20-30 min session." },
+      { name: "description", content: "Get a personalized certification & career roadmap before you invest time, money, or effort into the wrong path. Free 20-30 min session." },
     ],
   }),
   component: LandingPage,
@@ -49,7 +50,7 @@ export const Route = createFileRoute("/")({
 const heroBullets = [
   { icon: Compass, label: "Personalized Career Guidance" },
   { icon: GraduationCap, label: "Certification Path Recommendations" },
-  { icon: Target, label: "AI Career Positioning Strategy" },
+  { icon: Target, label: "Career Positioning Strategy" },
   { icon: Sparkles, label: "Industry-Specific Insights" },
   { icon: TrendingUp, label: "Future-Ready Growth Plan" },
 ];
@@ -215,9 +216,7 @@ function LandingPage() {
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
           <a href="#" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-orange-grad">
-              <Sparkles className="h-5 w-5 text-orange-foreground" />
-            </div>
+            <img src={eduoceanLogo} alt="EduOcean Logo" className="h-9 w-9 object-contain" />
             <span className="font-display text-lg font-bold">
               The Edu<span className="text-primary">Ocean</span>
             </span>
@@ -324,7 +323,7 @@ function LandingPage() {
                   <Sparkles className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold">EduOcean AI Career Advisor</p>
+                  <p className="text-sm font-semibold">EduOcean Career Advisor</p>
                   <p className="flex items-center gap-1.5 text-[11px] opacity-90">
                     <span className="h-1.5 w-1.5 rounded-full bg-green-400" /> Online
                   </p>
@@ -332,7 +331,7 @@ function LandingPage() {
               </div>
               <div className="space-y-3 p-4">
                 <div className="max-w-[85%] rounded-2xl rounded-tl-sm bg-muted p-3 text-sm text-foreground/85">
-                  Hi! I'm your AI Career Advisor 👋
+                  Hi! I'm your Career Advisor 👋
                   <br />I'll help you find the right certification path and build your personalized roadmap.
                 </div>
                 <div className="max-w-[85%] rounded-2xl rounded-tl-sm bg-muted p-3 text-sm text-foreground/85">
@@ -352,7 +351,7 @@ function LandingPage() {
             </div>
 
             <div>
-              <p className="text-sm font-semibold text-navy">Our AI Career Advisor will help you:</p>
+              <p className="text-sm font-semibold text-navy">Our Career Advisor will help you:</p>
               <ul className="mt-4 space-y-3 text-sm text-foreground/80">
                 {advisorHelps.map((i) => (
                   <li key={i} className="flex gap-2">
