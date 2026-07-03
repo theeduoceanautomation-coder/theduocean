@@ -249,7 +249,15 @@ function LandingPage() {
               Get a Personalized Certification & Career Roadmap Before You Invest Time, Money, or Effort Into the Wrong Path.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Every day, professionals spend hours researching certifications like PMP, AWS, Azure, CISSP, CISM, CEH, Agile, DevOps, AI, Data Analytics, ITIL, and more.
+              Every day, professionals spend hours researching certifications like{" "}
+              {["PMP", "AWS", "Azure", "CISSP", "CISM", "CEH", "Agile", "DevOps", "AI", "Data Analytics", "ITIL"].map((cert, i, arr) => (
+                <span key={cert}>
+                  <span className="inline-block rounded bg-primary/10 px-1.5 py-0.5 text-sm font-bold text-primary">
+                    {cert}
+                  </span>
+                  {i < arr.length - 1 ? ", " : ""}
+                </span>
+              ))}{" "}and more.
             </p>
 
             <div className="mt-7 grid grid-cols-2 gap-4 sm:grid-cols-5">
