@@ -117,43 +117,6 @@ function RootShell({ children }: { children: ReactNode }) {
             __html: `(function(d, t) {
   var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
   v.onload = function() {
-
-    const CalendlyExtension = {
-      name: 'CalendlyWidget',
-      type: 'response',
-      match: ({ trace }) =>
-        trace.type === 'show_calendly' ||
-        trace.payload?.name === 'show_calendly',
-      render: ({ element }) => {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://assets.calendly.com/assets/external/widget.css';
-        document.head.appendChild(link);
-
-        const container = document.createElement('div');
-        container.className = 'calendly-inline-widget';
-        container.setAttribute('data-url',
-          'https://calendly.com/theeduoceanautomation/30min');
-        container.style.minWidth = '320px';
-        container.style.height = '400px';
-        element.appendChild(container);
-
-        const script = document.createElement('script');
-        script.src = 'https://assets.calendly.com/assets/external/widget.js';
-        script.async = true;
-        document.head.appendChild(script);
-
-        window.addEventListener('message', function(e) {
-          if (e.data.event === 'calendly.event_scheduled') {
-            window.voiceflow.chat.interact({
-              type: 'text',
-              payload: 'I have booked my session!'
-            });
-          }
-        });
-      }
-    };
-
     window.voiceflow.chat.load({
       verify: {
         projectID: "6a31070f3ab44152ef049647",
@@ -161,10 +124,7 @@ function RootShell({ children }: { children: ReactNode }) {
         versionID: "main"
       },
       url: "https://general-runtime.voiceflow.com",
-      voice: { url: "https://runtime-api.voiceflow.com" },
-      assistant: {
-        extensions: [CalendlyExtension]
-      }
+      voice: { url: "https://runtime-api.voiceflow.com" }
     });
   };
   v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
