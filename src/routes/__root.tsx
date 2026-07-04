@@ -156,7 +156,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
     window.voiceflow.chat.load({
       verify: {
-        projectID: "6a31070f3ab44152ef049646",
+        projectID: "6a31070f3ab44152ef049647",
         apiKey: "VF.DM.6a33efb6a7391f99601ecf7e.Rc3JuyuMEbw5P4LI",
         versionID: "main"
       },
