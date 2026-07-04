@@ -15,16 +15,27 @@
         document.head.appendChild(link);
 
         var container = document.createElement('div');
-        container.className = 'calendly-inline-widget';
-        container.setAttribute('data-url', 'https://calendly.com/theeduoceanautomation/30min');
         container.style.minWidth = '320px';
-        container.style.height = '400px';
+        container.style.height = '700px';
+        container.style.width = '100%';
         args.element.appendChild(container);
 
-        var script = document.createElement('script');
-        script.src = 'https://assets.calendly.com/assets/external/widget.js';
-        script.async = true;
-        document.head.appendChild(script);
+        function initCalendly() {
+          window.Calendly.initInlineWidget({
+            url: 'https://calendly.com/theeduoceanautomation/30min',
+            parentElement: container
+          });
+        }
+
+        if (window.Calendly) {
+          initCalendly();
+        } else {
+          var script = document.createElement('script');
+          script.src = 'https://assets.calendly.com/assets/external/widget.js';
+          script.async = true;
+          script.onload = initCalendly;
+          document.head.appendChild(script);
+        }
 
         window.addEventListener('message', function(e) {
           if (e.data.event === 'calendly.event_scheduled') {
