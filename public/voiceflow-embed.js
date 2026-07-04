@@ -37,6 +37,13 @@
       }
     };
 
+    var sessionKey = 'vf_session_id';
+    var sessionID = localStorage.getItem(sessionKey);
+    if (!sessionID) {
+      sessionID = 'user_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+      localStorage.setItem(sessionKey, sessionID);
+    }
+
     window.voiceflow.chat.load({
       verify: {
         projectID: "6a31070f3ab44152ef049646",
@@ -45,6 +52,7 @@
       },
       url: "https://general-runtime.voiceflow.com",
       voice: { url: "https://runtime-api.voiceflow.com" },
+      userID: sessionID,
       assistant: {
         extensions: [CalendlyExtension]
       }
