@@ -117,20 +117,55 @@ function RootShell({ children }: { children: ReactNode }) {
             __html: `(function(d, t) {
   var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
   v.onload = function() {
-    window.voiceflow.chat.load({
-      verify: { projectID: "6a31070f3ab44152ef049646", apiKey: "VF.DM.6a33efb6a7391f99601ecf7e.Rc3JuyuMEbw5P4LI", versionID: "main" },
-      url: "https://general-runtime.voiceflow.com",
-      voice: { url: "https://runtime-api.voiceflow.com" }
-    });
-    var poll = setInterval(function() {
-      var host = d.getElementById("voiceflow-chat");
-      if (host && host.shadowRoot) {
-        clearInterval(poll);
-        var style = d.createElement("style");
-        style.textContent = ".vfrc-launcher { width: 140px !important; height: 56px !important; padding: 10px 18px !important; } .vfrc-launcher--media { width: 36px !important; height: 36px !important; } .vfrc-launcher--media img, .vfrc-launcher--media svg { width: 30px !important; height: 30px !important; } .vfrc-launcher__label { font-size: 15px !important; }";
-        host.shadowRoot.appendChild(style);
+
+    const CalendlyExtension = {
+      name: 'CalendlyWidget',
+      type: 'response',
+      match: ({ trace }) =>
+        trace.type === 'show_calendly' ||
+        trace.payload?.name === 'show_calendly',
+      render: ({ element }) => {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://assets.calendly.com/assets/external/widget.css';
+        document.head.appendChild(link);
+
+        const container = document.createElement('div');
+        container.className = 'calendly-inline-widget';
+        container.setAttribute('data-url',
+          'https://calendly.com/theeduoceanautomation/30min');
+        container.style.minWidth = '320px';
+        container.style.height = '400px';
+        element.appendChild(container);
+
+        const script = document.createElement('script');
+        script.src = 'https://assets.calendly.com/assets/external/widget.js';
+        script.async = true;
+        document.head.appendChild(script);
+
+        window.addEventListener('message', function(e) {
+          if (e.data.event === 'calendly.event_scheduled') {
+            window.voiceflow.chat.interact({
+              type: 'text',
+              payload: 'I have booked my session!'
+            });
+          }
+        });
       }
-    }, 300);
+    };
+
+    window.voiceflow.chat.load({
+      verify: {
+        projectID: "6a31070f3ab44152ef049646",
+        apiKey: "VF.DM.6a33efb6a7391f99601ecf7e.Rc3JuyuMEbw5P4LI",
+        versionID: "main"
+      },
+      url: "https://general-runtime.voiceflow.com",
+      voice: { url: "https://runtime-api.voiceflow.com" },
+      assistant: {
+        extensions: [CalendlyExtension]
+      }
+    });
   };
   v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
   v.type = "text/javascript";
